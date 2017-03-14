@@ -1,0 +1,28 @@
+<div class="container">
+ 
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+			<div class="form-container">
+				<form name="passwordStrength" role="form" >
+				    <legend class="form-label">Password strength</legend>
+
+				    <div class="form-group">
+				        <label for="password">Password</label>
+
+				        <div class="form-hint" ng-show="user.password.length < 7">Password must be more than 7 characters.</div>
+
+						<input placeholder="password" name="password" ng-style="checkStrength" class="form-control class1" type="password" ng-required ng-model="user.password" ng-change="validationInputPwdText(user.password)" pw-check='user.password' />
+						<br />
+						<input placeholder="confirm password" ng-style="checkStrength" class="form-control class1" type='password' id='passwordConfirm' name='passwordConfirm' ng-model='user.passwordConfirm' ng-required pw-check='user.password'/>
+
+						<span class="help-inline" ng-show='passwordStrength.$valid && passwordStrength.$dirty' ng-class="strength">This password is {{strength}} ! </span>
+
+						<div class="msg-block" ng-show="passwordStrength.$error"> <span class="msg-error" ng-show="passwordStrength.user.passwordConfirm.$error.pwmatch">Passwords don't match.</span> </div><br />
+				    <button class="btn btn-primary" ng-disabled="strength !== 'strong'" ng-click="savePassword(user.password)">Submit</button>
+				</form>
+			</div>
+		</div>	
+		<div class="col-sm-4"></div>
+	</div>
+</div>
