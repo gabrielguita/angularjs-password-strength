@@ -2,7 +2,7 @@
   "name": "countries-and-capitals",
   "version": "1.0.0",
   "description": "",
-  "main": "countriesApp.js",
+  "main": "passwordStrength.js",
   "dependencies": {
     "grunt-npm-install": "^0.3.1",
     "bower-requirejs": "^1.2.0",
